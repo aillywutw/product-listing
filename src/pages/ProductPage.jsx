@@ -11,7 +11,7 @@ export default function ProductPage() {
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    axios.get(`/api/products/${id}`).then(res => setProduct(res.data));
+    axios.get(`https://dummyjson.com/products/${id}`).then(res => setProduct(res.data));
   }, [id]);
 
   if (!product) return (

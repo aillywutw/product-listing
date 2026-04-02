@@ -12,7 +12,7 @@ export default function HomePage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get("/api/products?limit=100").then(res => {
+    axios.get("https://dummyjson.com/products?limit=100").then(res => {
       setProducts(res.data.products);
       setLoading(false);
     });
