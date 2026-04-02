@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { CartProvider } from "./context/CartContext";
 import Navbar from "./components/Navbar";
 import CartDrawer from "./components/CartDrawer";
@@ -11,14 +11,14 @@ export default function App() {
 
   return (
     <CartProvider>
-      <BrowserRouter>
+      <HashRouter>
         <Navbar onCartOpen={() => setCartOpen(true)} />
         <CartDrawer open={cartOpen} onClose={() => setCartOpen(false)} />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/product/:id" element={<ProductPage />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </CartProvider>
   );
 }
